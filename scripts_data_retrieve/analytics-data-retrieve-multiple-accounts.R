@@ -1,3 +1,5 @@
+#install.packages("devtools")
+#devtools::install_github("terranova83/RGoogleAnalytics")
 setwd("/Users/sylvain/Desktop") #set work directory
 getwd() #check work directory
 require(RGoogleAnalytics) #load RGoogleAnalytics library
@@ -44,4 +46,4 @@ newDate<-as.Date(df$date,"%Y%m%d")  #convert into date data type
 df$date<- format(newDate,"%d/%m/%Y") #to change format, but it convets it back to character class
 df$date<- as.Date(df$date,"%d/%m/%Y")  #convert it back to date data type
 print(df) #print the final file in the console
-write.csv(df, "google_analytics.csv")
+write.csv(df,paste(Sys.time(),"google_analytics.csv")) #export
