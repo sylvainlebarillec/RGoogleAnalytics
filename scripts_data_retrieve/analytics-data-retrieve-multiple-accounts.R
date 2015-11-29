@@ -40,7 +40,8 @@ df<-rbind(df,analyticsviewID)
 
 }
 class(df$date)
-newDate<-as.Date(df$date,"%Y%M%d")  #convert into date data type
-newFormat<- format(newDate,"%m/%d/%y") #to change format, but it convets it back to character class
-newFormat<- as.Date(newFormat,"%d/%m/%y")  #convert it back to date data type
+newDate<-as.Date(df$date,"%Y%m%d")  #convert into date data type
+df$date<- format(newDate,"%d/%m/%Y") #to change format, but it convets it back to character class
+df$date<- as.Date(df$date,"%d/%m/%Y")  #convert it back to date data type
+print(df) #print the final file in the console
 write.csv(df, "google_analytics.csv")
