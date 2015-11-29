@@ -11,11 +11,12 @@
 #' @importFrom httr GET
 GetDataFeed <- function(query.uri) {
   
-  GA.Data <- GET(query.uri)  
+  GA.Data <- GET(query.uri)
   GA.list <- ParseDataFeedJSON(GA.Data)
   if (is.null(GA.list$rows)) {
-    cat("Your query matched 0 results. Please verify your query using the Query Feed Explorer and re-run it.")
-    break
+    cat("Your query matched 0 results. Please verify your query using the Query Feed Explorer and re-run it.\n")
+    # break
+    return(GA.list)
   } else {
     return (GA.list)
   }
