@@ -10,11 +10,5 @@
 ParseDataFeedJSON <- function(GA.Data) {
   
   GA.list.param <- ParseApiErrorMessage(GA.Data)
-  if (!is.null(GA.list.param$code)) {
-    stop(paste("code :",
-               GA.list.param$code,
-               "Reason :",
-               GA.list.param$message))
-  }
-  return(GA.list.param)
+    return(GA.list.param)
 }
