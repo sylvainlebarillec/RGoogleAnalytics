@@ -28,9 +28,7 @@ SplitQueryDaywise <- function(query.builder, token, delay) {
   
   date.difference <- as.numeric(difftime(end.date, start.date, units = 'days'))
   
-  if (date.difference == 0) {
-    stop("Please verify start date and end date. They cannot be the same")
-  }
+ 
   
   # Create an empty dataframe in order to store the results
   master.df <- data.frame()
